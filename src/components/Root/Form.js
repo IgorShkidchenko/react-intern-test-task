@@ -37,13 +37,11 @@ class Form extends React.Component {
   }
 
   render() {
-    const color = this.state.valid === false ? 'red' : null;
-
     return (
       <form onSubmit={this.handleSubmit}>
         <input type="text" placeholder="Enter repository name e.g. facebook/react" value={this.state.value} onChange={this.handleChange} />
         <input type="submit" value="Add" />
-        {this.state.valid === false ? <p className={color}>Repository not found</p> : null}
+        {this.state.valid === false ? <p className={'red'}>Repository not found</p> : null}
       </form>
     );
   }
