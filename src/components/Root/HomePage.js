@@ -12,21 +12,19 @@ class HomePage extends React.Component {
 
     this.handleAddRepository = this.handleAddRepository.bind(this);
     this.handleRemoveRepository = this.handleRemoveRepository.bind(this);
-  };
+  }
 
   handleAddRepository(repository) {
-    const old_repositories = this.state.repositories;
-    old_repositories.push(repository)
+    const oldRepositories = this.state.repositories;
+    oldRepositories.push(repository)
 
     this.setState({
-      repositories: old_repositories
+      repositories: oldRepositories
     });
   }
 
   handleRemoveRepository(id) {
-    const filteredRepositories = this.state.repositories.filter(function(repo) {
-      return repo.id !== id
-    });
+    const filteredRepositories = this.state.repositories.filter(repo => repo.id !== id);
 
     this.setState({
       repositories: filteredRepositories

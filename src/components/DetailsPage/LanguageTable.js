@@ -3,7 +3,7 @@ import axios from 'axios'
 
 import LanguageRow from './LanguageRow'
 
-function sum_of_hash_values(hash) {
+const sumOfHashValues = (hash) => {
   let sum = 0;
 
   for(const key in hash) {
@@ -12,36 +12,34 @@ function sum_of_hash_values(hash) {
   return sum;
 }
 
-function calculate_percentage(num, total) {
-  return (num * 100 / total).toFixed(2)
-}
+const calculatePercentage = (num, total) => (num * 100 / total).toFixed(2);
 
 class LanguageTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      repository_languages: null
+      repositoryLanguages: null
     };
   }
 
   componentDidMount() {
     axios.get(this.props.repository.languages_url)
       .then(response => {
-        this.setState({ repository_languages: response.data });
+        this.setState({ repositoryLanguages: response.data });
       })
   }
 
   render() {
     const rows = []
-    const repository_languages = this.state.repository_languages
-    const total_repository_languages_bytes = sum_of_hash_values(repository_languages)
+    const repositoryLanguages = this.state.repositoryLanguages
+    const totalRepositoryLanguagesBytes = sumOfHashValues(repositoryLanguages)
 
-    for(const language in repository_languages) {
-      const language_bytes = repository_languages[language]
+    for(const language in repositoryLanguages) {
+      const languageBytes = repositoryLanguages[language]
       rows.push(
         <LanguageRow
-          percentage={calculate_percentage(language_bytes, total_repository_languages_bytes)}
-          language_name={language}
+          percentage={calculatePercentage(languageBytes, totalRepositoryLanguagesBytes)}
+          languageName={language}
           key={language} />
       );
     }

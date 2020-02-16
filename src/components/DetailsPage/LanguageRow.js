@@ -1,16 +1,14 @@
 import React from 'react'
 
-class LanguageRow extends React.Component {
-  render() {
-    const percentage = this.props.percentage
-    const language_name = this.props.language_name
+const LanguageRow = (props) => {
+  const percentage = props.percentage
+  const languageName = props.languageName
 
-    return (
-      <tr>
-        <td>{language_name}: {percentage}%</td>
-      </tr>
-    )
-  }
+  return (
+    <tr>
+      <td>{languageName}: {percentage}%</td>
+    </tr>
+  )
 }
 
 export default LanguageRow
