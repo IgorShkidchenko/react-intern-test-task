@@ -6,8 +6,8 @@ class HomePageContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      repositories: []
-    }
+      repositories: [],
+    };
 
     this.handleAddRepository = this.handleAddRepository.bind(this);
     this.handleRemoveRepository = this.handleRemoveRepository.bind(this);
@@ -15,10 +15,10 @@ class HomePageContainer extends React.Component {
 
   handleAddRepository(repository) {
     const oldRepositories = this.state.repositories;
-    oldRepositories.push(repository)
+    oldRepositories.push(repository);
 
     this.setState({
-      repositories: oldRepositories
+      repositories: oldRepositories,
     });
   }
 
@@ -26,18 +26,18 @@ class HomePageContainer extends React.Component {
     const filteredRepositories = this.state.repositories.filter(repo => repo.id !== id);
 
     this.setState({
-      repositories: filteredRepositories
+      repositories: filteredRepositories,
     });
   }
 
   render() {
-    return <HomePageComponent
+    return (<HomePageComponent
       self={this}
       repositories={this.state.repositories}
       handleAddRepository={this.handleAddRepository}
       handleRemoveRepository={this.handleRemoveRepository}
-      />
+    />);
   }
 }
 
-export default HomePageContainer
+export default HomePageContainer;

@@ -1,14 +1,15 @@
-import React from "react"
-import axios from "axios"
+import React from "react";
+import axios from "axios";
+import PropTypes from "prop-types";
 
-import FormComponent from "./component"
+import FormComponent from "./component";
 
 class FormContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: '',
-      valid: true
+      value: "",
+      valid: true,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -16,36 +17,39 @@ class FormContainer extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({ value: event.target.value });
   }
 
   handleSubmit(event) {
-    event.preventDefault()
+    event.preventDefault();
 
     const url = `https://api.github.com/repos/${this.state.value}`;
 
     let promiseResponse;
     axios.get(url)
-      .then(response => {
+      .then((response) => {
         promiseResponse = response.data;
 
-        this.setState({valid: true});
-        this.props.onAddRepository(promiseResponse)
+        this.setState({ valid: true });
+        this.props.onAddRepository(promiseResponse);
       })
-      .catch(error => {
-        console.log(error)
-        this.setState({valid: false});
-      })
+      .catch(() => {
+        this.setState({ valid: false });
+      });
   }
 
   render() {
-    return <FormComponent
+    return (<FormComponent
       value={this.state.value}
       valid={this.state.valid}
       handleChange={this.handleChange}
       handleSubmit={this.handleSubmit}
-    />;
+    />);
   }
 }
 
-export default FormContainer
+FormContainer.propTypes = {
+  onAddRepository: PropTypes.func.isRequired,
+};
+
+export default FormContainer;

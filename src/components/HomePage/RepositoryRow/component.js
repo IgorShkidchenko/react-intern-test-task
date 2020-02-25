@@ -1,26 +1,34 @@
-import React from "react"
-import { Link } from "react-router-dom"
-import * as path from "../../../constants/path"
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import * as path from "../../../constants/path";
 
-const RepotisoryRowComponent = (props) => {
-  const { repository } = props
-
-  return (
-    <tr>
-      <td>
-        <Link to={{
+const RepotisoryRowComponent = ({ repository, handleClick }) => (
+  <tr>
+    <td>
+      <Link to={{
             pathname: path.DETAILS,
             state: {
-              repository: repository
-            }
-          }}>
-          <td>{repository.name}</td>
-          <td>{repository.stargazers_count}</td>
-          <td onClick={props.handleClick}>Х</td>
-        </Link>
-      </td>
-    </tr>
-  );
-}
+              repository,
+            },
+          }}
+      >
+        {repository.name} {repository.stargazers_count}
+        <span
+          role="button"
+          tabIndex={0}
+          onClick={handleClick}
+          onKeyDown={handleClick}
+        >  Х
+        </span>
+      </Link>
+    </td>
+  </tr>
+);
 
-export default RepotisoryRowComponent
+RepotisoryRowComponent.propTypes = {
+  repository: PropTypes.object.isRequired,
+  handleClick: PropTypes.func.isRequired,
+};
+
+export default RepotisoryRowComponent;

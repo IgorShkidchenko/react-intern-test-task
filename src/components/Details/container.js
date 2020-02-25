@@ -1,7 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import DetailsComponent from "./component";
 
-const DetailsContainer = (props) => <DetailsComponent repository={props.location.state.repository} />;
+const DetailsContainer = props => <DetailsComponent repository={props.location.state.repository} />;
 
-export default DetailsContainer
+DetailsContainer.propTypes = {
+  location: PropTypes.object.isRequired,
+};
+
+export default DetailsContainer;

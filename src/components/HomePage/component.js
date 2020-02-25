@@ -1,22 +1,30 @@
-import React from "react"
-import SimpleStorage from "react-simple-storage"
+import React from "react";
+import SimpleStorage from "react-simple-storage";
+import PropTypes from "prop-types";
 
 import Form from "./Form";
 import RepositoryTable from "./RepositoryTable";
 
-const HomePageComponent = (props) => {
-  return (
-    <div>
-    <SimpleStorage parent={props.self} />
-      <Form
-        onAddRepository={props.handleAddRepository}
-      />
-      <RepositoryTable
-        repositories={props.repositories}
-        onRemoveRepository={props.handleRemoveRepository}
-      />
-    </div>
-  );
-}
+const HomePageComponent = ({
+  self, handleAddRepository, repositories, handleRemoveRepository,
+}) => (
+  <div>
+    <SimpleStorage parent={self} />
+    <Form
+      onAddRepository={handleAddRepository}
+    />
+    <RepositoryTable
+      repositories={repositories}
+      onRemoveRepository={handleRemoveRepository}
+    />
+  </div>
+);
 
-export default HomePageComponent
+HomePageComponent.propTypes = {
+  self: PropTypes.object.isRequired,
+  repositories: PropTypes.array.isRequired,
+  handleAddRepository: PropTypes.func.isRequired,
+  handleRemoveRepository: PropTypes.func.isRequired,
+};
+
+export default HomePageComponent;

@@ -1,37 +1,42 @@
-import React from "react"
-import axios from "axios"
+import React from "react";
+import axios from "axios";
+import PropTypes from "prop-types";
 
 import LanguageTableComponent from "./component";
-import LanguageRow from '.././LanguageRow'
+import LanguageRow from ".././LanguageRow";
 
 class LanguageTableContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      repositoryLanguages: null
+      repositoryLanguages: null,
     };
   }
 
   componentDidMount() {
     axios.get(this.props.repository.languages_url)
-      .then(response => {
+      .then((response) => {
         this.setState({ repositoryLanguages: response.data });
-      })
+      });
   }
 
   render() {
-    const rows = []
-    const repositoryLanguages = this.state.repositoryLanguages
-    const totalRepositoryLanguagesBytes = sumOfHashValues(repositoryLanguages)
+    const rows = [];
+    const { repositoryLanguages } = this.state;
 
-    for(const language in repositoryLanguages) {
-      const languageBytes = repositoryLanguages[language]
-      rows.push(
-        <LanguageRow
+    if (repositoryLanguages !== null) {
+      const totalRepositoryLanguagesBytes = sumOfHashValues(repositoryLanguages);
+
+      Object.entries(repositoryLanguages).forEach((language) => {
+        const languageName = language[0];
+        const languageBytes = language[1];
+
+        rows.push(<LanguageRow
           percentage={calculatePercentage(languageBytes, totalRepositoryLanguagesBytes)}
-          languageName={language}
-          key={language} />
-      );
+          languageName={languageName}
+          key={languageName}
+        />);
+      });
     }
 
     return <LanguageTableComponent rows={rows} />;
@@ -41,12 +46,17 @@ class LanguageTableContainer extends React.Component {
 const sumOfHashValues = (hash) => {
   let sum = 0;
 
-  for(const key in hash) {
-    sum += hash[key]
-  }
+  Object.values(hash).forEach((languageBytes) => {
+    sum += languageBytes;
+  });
+
   return sum;
-}
+};
 
-const calculatePercentage = (num, total) => (num * 100 / total).toFixed(2);
+const calculatePercentage = (num, total) => ((num * 100) / total).toFixed(2);
 
-export default LanguageTableContainer
+LanguageTableContainer.propTypes = {
+  repository: PropTypes.object.isRequired,
+};
+
+export default LanguageTableContainer;

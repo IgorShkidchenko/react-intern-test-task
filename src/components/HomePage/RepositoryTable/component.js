@@ -1,17 +1,20 @@
-import React from "react"
+import React from "react";
+import PropTypes from "prop-types";
 
-const RepositoryTableComponent = ({ rows }) => {
-  return (
-    <table>
-      <thead>
-        <tr>
-          <th>Repository Name</th>
-          <th>Stars</th>
-        </tr>
-      </thead>
-      <tbody>{rows}</tbody>
-    </table>
-  )
-}
+const RepositoryTableComponent = ({ rows }) => (
+  <table>
+    <thead>
+      <tr>
+        <th>Repository Name</th>
+        <th>Stars</th>
+      </tr>
+    </thead>
+    <tbody>{rows}</tbody>
+  </table>
+);
 
-export default RepositoryTableComponent
+RepositoryTableComponent.propTypes = {
+  rows: PropTypes.array.isRequired,
+};
+
+export default RepositoryTableComponent;

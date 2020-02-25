@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import RepotisoryRowComponent from "./component";
 
@@ -11,15 +12,20 @@ class RepotisoryRowContainer extends React.Component {
 
   handleClick(event) {
     event.preventDefault();
-    this.props.onRemoveRepository(this.props.repository.id)
+    this.props.onRemoveRepository(this.props.repository.id);
   }
 
   render() {
-    return <RepotisoryRowComponent
+    return (<RepotisoryRowComponent
       repository={this.props.repository}
       handleClick={this.handleClick}
-    />;
+    />);
   }
 }
 
-export default RepotisoryRowContainer
+RepotisoryRowContainer.propTypes = {
+  repository: PropTypes.object.isRequired,
+  onRemoveRepository: PropTypes.func.isRequired,
+};
+
+export default RepotisoryRowContainer;

@@ -1,7 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import StatsComponent from "./component";
 
-const StatsContainer = (props) => <StatsComponent repository={props.repository}/>;
+const StatsContainer = ({ repository }) => <StatsComponent repository={repository} />;
 
-export default StatsContainer
+StatsContainer.propTypes = {
+  repository: PropTypes.object.isRequired,
+};
+
+export default StatsContainer;

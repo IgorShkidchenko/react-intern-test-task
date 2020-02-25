@@ -1,2 +1,2 @@
-export const ROOT = '/'
-export const DETAILS = '/details'
+export const ROOT = "/";
+export const DETAILS = "/details";
