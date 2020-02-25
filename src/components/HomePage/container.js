@@ -1,9 +1,8 @@
-import React from 'react'
-import SimpleStorage from 'react-simple-storage'
-import RepositoryTable from './RepositoryTable'
-import Form from './Form'
+import React from "react";
 
-class HomePage extends React.Component {
+import HomePageComponent from "./component";
+
+class HomePageContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -32,19 +31,13 @@ class HomePage extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-      <SimpleStorage parent={this} />
-        <Form
-          onAddRepository={this.handleAddRepository}
-        />
-        <RepositoryTable
-          repositories={this.state.repositories}
-          onRemoveRepository={this.handleRemoveRepository}
-        />
-      </div>
-    );
+    return <HomePageComponent
+      self={this}
+      repositories={this.state.repositories}
+      handleAddRepository={this.handleAddRepository}
+      handleRemoveRepository={this.handleRemoveRepository}
+      />
   }
 }
 
-export default HomePage
+export default HomePageContainer

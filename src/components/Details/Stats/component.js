@@ -1,8 +1,6 @@
 import React from 'react'
 
-const Stats = (props) => {
-  const repository = props.repository
-
+const StatsComponent = ({ repository }) => {
   return (
     <table>
       <thead>
@@ -25,4 +23,4 @@ const Stats = (props) => {
   )
 }
 
-export default Stats
+export default StatsComponent

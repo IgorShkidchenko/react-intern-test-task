@@ -1,7 +1,9 @@
-import React from 'react'
-import axios from 'axios';
+import React from "react"
+import axios from "axios"
 
-class Form extends React.Component {
+import FormComponent from "./component"
+
+class FormContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,14 +39,13 @@ class Form extends React.Component {
   }
 
   render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <input type="text" placeholder="Enter repository name e.g. facebook/react" value={this.state.value} onChange={this.handleChange} />
-        <input type="submit" value="Add" />
-        {this.state.valid === false ? <p className={'red'}>Repository not found</p> : null}
-      </form>
-    );
+    return <FormComponent
+      value={this.state.value}
+      valid={this.state.valid}
+      handleChange={this.handleChange}
+      handleSubmit={this.handleSubmit}
+    />;
   }
 }
 
-export default Form
+export default FormContainer

@@ -1,20 +1,10 @@
-import React from 'react'
-import axios from 'axios'
+import React from "react"
+import axios from "axios"
 
-import LanguageRow from './LanguageRow'
+import LanguageTableComponent from "./component";
+import LanguageRow from '.././LanguageRow'
 
-const sumOfHashValues = (hash) => {
-  let sum = 0;
-
-  for(const key in hash) {
-    sum += hash[key]
-  }
-  return sum;
-}
-
-const calculatePercentage = (num, total) => (num * 100 / total).toFixed(2);
-
-class LanguageTable extends React.Component {
+class LanguageTableContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -44,17 +34,19 @@ class LanguageTable extends React.Component {
       );
     }
 
-    return (
-      <table>
-        <thead>
-          <tr>
-            <td>Languages:</td>
-          </tr>
-        </thead>
-        <tbody>{rows}</tbody>
-      </table>
-    );
+    return <LanguageTableComponent rows={rows} />;
   }
 }
 
-export default LanguageTable
+const sumOfHashValues = (hash) => {
+  let sum = 0;
+
+  for(const key in hash) {
+    sum += hash[key]
+  }
+  return sum;
+}
+
+const calculatePercentage = (num, total) => (num * 100 / total).toFixed(2);
+
+export default LanguageTableContainer

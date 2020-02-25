@@ -5,9 +5,7 @@ import * as path from '../../constants/path'
 import Stats from './Stats'
 import LanguageTable from './LanguageTable'
 
-const Details = (props) => {
-  const { repository } = props.location.state
-
+const DetailsComponent = ({ repository }) => {
   return (
     <div>
       <p>
@@ -18,9 +16,9 @@ const Details = (props) => {
         <Stats repository={repository}/>
         <LanguageTable repository={repository}/>
       </div>
-      <Link to={path.ROOT}>back</Link>
+      <Link to={path.ROOT}>Back</Link>
     </div>
   )
 }
 
-export default Details
+export default DetailsComponent

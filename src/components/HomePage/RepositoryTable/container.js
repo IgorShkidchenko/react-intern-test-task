@@ -1,7 +1,9 @@
-import React from 'react'
-import RepositoryRow from './RepositoryRow'
+import React from "react";
 
-const RepositoryTable = (props) => {
+import RepositoryTableComponent from "./component";
+import RepositoryRow from ".././RepositoryRow";
+
+const RepositoryTableContainer = (props) => {
   const rows = [];
   const sortedRepos = props.repositories.sort((a, b) => b.stargazers_count - a.stargazers_count);
 
@@ -14,17 +16,7 @@ const RepositoryTable = (props) => {
     );
   });
 
-  return (
-    <table>
-      <thead>
-        <tr>
-          <th>Repository Name</th>
-          <th>Stars</th>
-        </tr>
-      </thead>
-      <tbody>{rows}</tbody>
-    </table>
-  )
+  return <RepositoryTableComponent rows={rows} />;
 }
 
-export default RepositoryTable
+export default RepositoryTableContainer

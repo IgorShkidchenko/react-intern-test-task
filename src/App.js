@@ -6,8 +6,8 @@ import {
   Route
 } from 'react-router-dom';
 
-import { HomePage } from './components/Root'
-import { Details } from './components/DetailsPage'
+import HomePage from './components/HomePage'
+import Details from './components/Details'
 
 const App = () => {
   return (

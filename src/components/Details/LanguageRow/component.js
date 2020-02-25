@@ -1,6 +1,6 @@
 import React from 'react'
 
-const LanguageRow = (props) => {
+const LanguageRowComponent = (props) => {
   const percentage = props.percentage
   const languageName = props.languageName
 
@@ -11,4 +11,4 @@ const LanguageRow = (props) => {
   )
 }
 
-export default LanguageRow
+export default LanguageRowComponent
