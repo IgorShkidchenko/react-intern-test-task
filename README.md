@@ -1,1 +1,1 @@
-# RubyGarage intern test task
+# RubyGarage front-end intern test task

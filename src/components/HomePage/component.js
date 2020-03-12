@@ -2,7 +2,7 @@ import React from "react";
 import SimpleStorage from "react-simple-storage";
 import PropTypes from "prop-types";
 
-import Form from "./Form";
+import RepositoryForm from "./RepositoryForm";
 import RepositoryTable from "./RepositoryTable";
 
 const HomePageComponent = ({
@@ -10,9 +10,7 @@ const HomePageComponent = ({
 }) => (
   <div>
     <SimpleStorage parent={self} />
-    <Form
-      onAddRepository={handleAddRepository}
-    />
+    <RepositoryForm onAddRepository={handleAddRepository} />
     <RepositoryTable
       repositories={repositories}
       onRemoveRepository={handleRemoveRepository}
