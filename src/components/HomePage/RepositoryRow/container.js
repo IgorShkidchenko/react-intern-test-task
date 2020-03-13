@@ -1,6 +1,8 @@
 import React from "react";
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
+import * as actionTypes from "../../../store/repositories/actionTypes";
 import RepotisoryRowComponent from "./component";
 
 class RepotisoryRowContainer extends React.Component {
@@ -28,4 +30,8 @@ RepotisoryRowContainer.propTypes = {
   onRemoveRepository: PropTypes.func.isRequired,
 };
 
-export default RepotisoryRowContainer;
+const mapDispatchToProps = dispatch => ({
+  onRemoveRepository: repoId => dispatch({ type: actionTypes.REMOVE_REPOSITORY, repoId }),
+});
+
+export default connect(null, mapDispatchToProps)(RepotisoryRowContainer);

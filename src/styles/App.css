@@ -3,12 +3,3 @@
   margin-left: 25%;
   margin-top: 5%;
 }
-
-.red {
-  color: red;
-}
-
-.tables {
-  display: flex;
-  flex-direction: row;
-}

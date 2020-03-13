@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
 import RepositoryTableComponent from "./component";
 import RepositoryRow from ".././RepositoryRow";
 
-const RepositoryTableContainer = ({ repositories, onRemoveRepository }) => {
+const RepositoryTableContainer = ({ repositories }) => {
   const rows = [];
   const sortedRepos = repositories.sort((a, b) => b.stargazers_count - a.stargazers_count);
 
@@ -12,16 +13,18 @@ const RepositoryTableContainer = ({ repositories, onRemoveRepository }) => {
     rows.push(<RepositoryRow
       repository={repository}
       key={repository.id}
-      onRemoveRepository={onRemoveRepository}
     />);
   });
 
-  return <RepositoryTableComponent rows={rows} />;
+  return (<RepositoryTableComponent rows={rows} />);
 };
 
 RepositoryTableContainer.propTypes = {
   repositories: PropTypes.array.isRequired,
-  onRemoveRepository: PropTypes.func.isRequired,
 };
 
-export default RepositoryTableContainer;
+const mapStateToProps = state => ({
+  repositories: state.repo.repositories,
+});
+
+export default connect(mapStateToProps, null)(RepositoryTableContainer);
