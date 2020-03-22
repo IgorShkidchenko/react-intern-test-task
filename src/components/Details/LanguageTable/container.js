@@ -1,28 +1,19 @@
 import React from "react";
-import axios from "axios";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
+import { repositoryActions } from "../../../store/repositories";
 import LanguageTableComponent from "./component";
 import LanguageRow from ".././LanguageRow";
 
 class LanguageTableContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      repositoryLanguages: null,
-    };
-  }
-
   componentDidMount() {
-    axios.get(this.props.repository.languages_url)
-      .then((response) => {
-        this.setState({ repositoryLanguages: response.data });
-      });
+    this.props.loadRepositoryLanguages(this.props.repository.languages_url);
   }
 
   render() {
     const rows = [];
-    const { repositoryLanguages } = this.state;
+    const { repositoryLanguages } = this.props;
 
     if (repositoryLanguages !== null) {
       const totalRepositoryLanguagesBytes = sumOfHashValues(repositoryLanguages);
@@ -57,6 +48,16 @@ const calculatePercentage = (num, total) => ((num * 100) / total).toFixed(2);
 
 LanguageTableContainer.propTypes = {
   repository: PropTypes.object.isRequired,
+  repositoryLanguages: PropTypes.array.isRequired,
+  loadRepositoryLanguages: PropTypes.func.isRequired,
 };
 
-export default LanguageTableContainer;
+const mapStateToProps = state => ({
+  repositoryLanguages: state.repo.repositoryLanguages,
+});
+
+const mapDispatchToProps = dispatch => ({
+  loadRepositoryLanguages: url => dispatch(repositoryActions.loadRepositoryLanguages(url)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(LanguageTableContainer);
