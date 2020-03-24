@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RepositoryTableComponent /> renders correctly 1`] = `
+<table>
+  <thead>
+    <tr>
+      <th>
+        Repository Name
+      </th>
+      <th>
+        Stars
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <RepotisoryRowComponent
+      handleClick={[Function]}
+      key="name"
+      repository={
+        Object {
+          "name": "name",
+          "stargazers_count": 1,
+        }
+      }
+    />
+    <RepotisoryRowComponent
+      handleClick={[Function]}
+      key="name2"
+      repository={
+        Object {
+          "name": "name2",
+          "stargazers_count": 2,
+        }
+      }
+    />
+  </tbody>
+</table>
+`;

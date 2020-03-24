@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RepotisoryRowComponent /> renders correctly 1`] = `
+<tr>
+  <td>
+    <Link
+      to={
+        Object {
+          "pathname": "/details",
+          "state": Object {
+            "repository": Object {
+              "name": "name",
+              "stargazers_count": 1,
+            },
+          },
+        }
+      }
+    >
+      name
+       
+      1
+      <span
+        onClick={[MockFunction]}
+        onKeyDown={[MockFunction]}
+        role="button"
+        tabIndex={0}
+      >
+          Х
+      </span>
+    </Link>
+  </td>
+</tr>
+`;

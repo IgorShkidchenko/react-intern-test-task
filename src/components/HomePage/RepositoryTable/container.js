@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import RepositoryTableComponent from "./component";
 import RepositoryRow from ".././RepositoryRow";
 
-const RepositoryTableContainer = ({ repositories }) => {
+export const RepositoryTableContainer = ({ repositories }) => {
   const rows = [];
   const sortedRepos = repositories.sort((a, b) => b.stargazers_count - a.stargazers_count);
 

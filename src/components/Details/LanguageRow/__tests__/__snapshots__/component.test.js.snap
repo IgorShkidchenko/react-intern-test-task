@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LanguageRowComponent /> renders correctly 1`] = `
+<tr>
+  <td>
+    name
+    : 
+    1
+    %
+  </td>
+</tr>
+`;

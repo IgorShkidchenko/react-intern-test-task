@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HomePageComponent /> renders correctly 1`] = `
+<div>
+  <Connect(RepositoryForm) />
+  <Connect(RepositoryTableContainer) />
+</div>
+`;

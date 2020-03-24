@@ -1,7 +1,7 @@
 import React from "react";
 import * as path from "./constants/path";
 import {
-  BrowserRouter as Router,
+  MemoryRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";

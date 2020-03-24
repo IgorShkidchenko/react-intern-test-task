@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DetailsComponent /> renders correctly 1`] = `
+<div>
+  <p>
+    <a
+      href="url"
+    >
+       Clone
+    </a>
+  </p>
+  <div
+    className="tables"
+  >
+    <StatsContainer
+      repository={
+        Object {
+          "clone_url": "url",
+          "fullname": "name",
+        }
+      }
+    />
+    <Connect(LanguageTableContainer)
+      repository={
+        Object {
+          "clone_url": "url",
+          "fullname": "name",
+        }
+      }
+    />
+  </div>
+  <Link
+    to="/"
+  >
+    Back
+  </Link>
+</div>
+`;

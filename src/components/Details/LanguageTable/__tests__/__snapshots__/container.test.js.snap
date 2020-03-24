@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LanguageTableContainer /> renders correctly 1`] = `
+<LanguageTableComponent
+  rows={
+    Array [
+      <LanguageRowContainer
+        languageName="JS"
+        percentage="25.00"
+      />,
+      <LanguageRowContainer
+        languageName="C"
+        percentage="25.00"
+      />,
+      <LanguageRowContainer
+        languageName="Ruby"
+        percentage="50.00"
+      />,
+    ]
+  }
+/>
+`;

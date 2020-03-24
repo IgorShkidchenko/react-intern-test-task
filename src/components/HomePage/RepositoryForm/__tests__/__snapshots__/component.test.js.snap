@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RepotisoryRowComponent /> renders correctly 1`] = `
+<RepositoryForm
+  onAddRepository={[MockFunction]}
+>
+  <Formik
+    initialValues={
+      Object {
+        "repositoryUrl": "",
+      }
+    }
+    onSubmit={[Function]}
+    validate={[Function]}
+  >
+    <Form>
+      <form
+        action="#"
+        onReset={[Function]}
+        onSubmit={[Function]}
+      >
+        <Field
+          name="repositoryUrl"
+          placeholder="Enter repository name e.g. facebook/react"
+          type="repositoryUrl"
+        >
+          <input
+            name="repositoryUrl"
+            onBlur={[Function]}
+            onChange={[Function]}
+            placeholder="Enter repository name e.g. facebook/react"
+            type="repositoryUrl"
+            value=""
+          />
+        </Field>
+        <FormikConnect(ErrorMessageImpl)
+          component="p"
+          name="repositoryUrl"
+        >
+          <ErrorMessageImpl
+            component="p"
+            formik={
+              Object {
+                "dirty": false,
+                "errors": Object {},
+                "getFieldHelpers": [Function],
+                "getFieldMeta": [Function],
+                "getFieldProps": [Function],
+                "handleBlur": [Function],
+                "handleChange": [Function],
+                "handleReset": [Function],
+                "handleSubmit": [Function],
+                "initialErrors": Object {},
+                "initialStatus": undefined,
+                "initialTouched": Object {},
+                "initialValues": Object {
+                  "repositoryUrl": "",
+                },
+                "isSubmitting": false,
+                "isValid": true,
+                "isValidating": false,
+                "registerField": [Function],
+                "resetForm": [Function],
+                "setErrors": [Function],
+                "setFieldError": [Function],
+                "setFieldTouched": [Function],
+                "setFieldValue": [Function],
+                "setFormikState": [Function],
+                "setStatus": [Function],
+                "setSubmitting": [Function],
+                "setTouched": [Function],
+                "setValues": [Function],
+                "status": undefined,
+                "submitCount": 0,
+                "submitForm": [Function],
+                "touched": Object {},
+                "unregisterField": [Function],
+                "validateField": [Function],
+                "validateForm": [Function],
+                "validateOnBlur": true,
+                "validateOnChange": true,
+                "validateOnMount": false,
+                "values": Object {
+                  "repositoryUrl": "",
+                },
+              }
+            }
+            name="repositoryUrl"
+          />
+        </FormikConnect(ErrorMessageImpl)>
+        <button
+          disabled={false}
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
+    </Form>
+  </Formik>
+</RepositoryForm>
+`;

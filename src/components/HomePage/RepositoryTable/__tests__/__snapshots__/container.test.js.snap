@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RepositoryTableContainer /> renders correctly 1`] = `
+<RepositoryTableComponent
+  rows={
+    Array [
+      <UNDEFINED
+        repository={
+          Object {
+            "id": 2,
+            "stargazers_count": 2,
+          }
+        }
+      />,
+      <UNDEFINED
+        repository={
+          Object {
+            "id": 1,
+            "stargazers_count": 1,
+          }
+        }
+      />,
+    ]
+  }
+/>
+`;

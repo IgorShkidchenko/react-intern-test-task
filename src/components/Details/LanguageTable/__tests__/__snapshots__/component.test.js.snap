@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LanguageTableComponent /> renders correctly 1`] = `
+<table>
+  <thead>
+    <tr>
+      <td>
+        Languages:
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <LanguageRowComponent
+      key="name"
+      languageName="name"
+      percentage="1"
+    />
+    <LanguageRowComponent
+      key="name2"
+      languageName="name2"
+      percentage="2"
+    />
+  </tbody>
+</table>
+`;

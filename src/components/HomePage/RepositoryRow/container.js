@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { repositoryActions } from "../../../store/repositories";
 import RepotisoryRowComponent from "./component";
 
-class RepotisoryRowContainer extends React.Component {
+export class RepotisoryRowContainer extends React.Component {
   constructor(props) {
     super(props);
 

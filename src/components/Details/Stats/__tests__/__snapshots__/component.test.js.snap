@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<StatsComponent /> renders correctly 1`] = `
+<table>
+  <thead>
+    <tr>
+      <td>
+        Stats:
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        watchers: 
+        1
+      </td>
+    </tr>
+    <tr>
+      <td>
+        stars: 
+        1
+      </td>
+    </tr>
+    <tr>
+      <td>
+        forks: 
+        1
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
