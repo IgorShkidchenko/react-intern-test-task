@@ -1,14 +1,12 @@
 import React from "react";
-import { configure, shallow } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
+import { shallow } from "enzyme";
 
 import DetailsComponent from "../component";
 
-configure({ adapter: new Adapter() });
-
 describe("<DetailsComponent />", () => {
   it("renders correctly", () => {
-    const wrapper = shallow(<DetailsComponent repository={{ fullname: "name", clone_url: "url" }} />);
+    const location = { state: { repository: { fullname: "name", clone_url: "url" } } }
+    const wrapper = shallow(<DetailsComponent location={location} />);
 
     expect(wrapper).toMatchSnapshot();
   });

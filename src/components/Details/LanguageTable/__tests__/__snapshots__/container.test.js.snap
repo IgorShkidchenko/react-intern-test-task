@@ -4,15 +4,15 @@ exports[`<LanguageTableContainer /> renders correctly 1`] = `
 <LanguageTableComponent
   rows={
     Array [
-      <LanguageRowContainer
+      <LanguageRowComponent
         languageName="JS"
         percentage="25.00"
       />,
-      <LanguageRowContainer
+      <LanguageRowComponent
         languageName="C"
         percentage="25.00"
       />,
-      <LanguageRowContainer
+      <LanguageRowComponent
         languageName="Ruby"
         percentage="50.00"
       />,

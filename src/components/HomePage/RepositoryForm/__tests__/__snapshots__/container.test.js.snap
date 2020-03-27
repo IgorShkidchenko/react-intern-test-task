@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<RepotisoryRowComponent /> renders correctly 1`] = `
+exports[`<RepotisoryRow /> renders correctly 1`] = `
 <RepositoryForm
   onAddRepository={[MockFunction]}
 >

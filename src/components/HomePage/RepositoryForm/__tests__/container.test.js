@@ -1,12 +1,9 @@
 import React from "react";
-import { configure, mount } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
+import { mount } from "enzyme";
 import { waitFor } from "@testing-library/dom";
-import { RepositoryForm } from "../component";
+import { RepositoryForm } from "../container";
 
-configure({ adapter: new Adapter() });
-
-describe("<RepotisoryRowComponent />", () => {
+describe("<RepotisoryRow />", () => {
   const clickFn = jest.fn();
   let wrapper;
 

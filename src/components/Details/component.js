@@ -6,22 +6,26 @@ import * as path from "../../constants/path";
 import Stats from "./Stats";
 import LanguageTable from "./LanguageTable";
 
-const DetailsComponent = ({ repository }) => (
-  <div>
-    <p>
-      {repository.full_name}
-      <a href={repository.clone_url}> Clone</a>
-    </p>
-    <div className="tables">
-      <Stats repository={repository} />
-      <LanguageTable repository={repository} />
+const DetailsComponent = ({ location }) => {
+  const repository = location.state.repository;
+
+    return (
+      <div>
+      <p>
+        {repository.full_name}
+        <a href={repository.clone_url}> Clone</a>
+      </p>
+      <div className="tables">
+        <Stats repository={repository} />
+        <LanguageTable repository={repository} />
+      </div>
+      <Link to={path.ROOT}>Back</Link>
     </div>
-    <Link to={path.ROOT}>Back</Link>
-  </div>
-);
+    )
+}
 
 DetailsComponent.propTypes = {
-  repository: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
 export default DetailsComponent;

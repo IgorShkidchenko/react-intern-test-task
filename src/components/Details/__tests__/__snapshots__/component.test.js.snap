@@ -12,7 +12,7 @@ exports[`<DetailsComponent /> renders correctly 1`] = `
   <div
     className="tables"
   >
-    <StatsContainer
+    <StatsComponent
       repository={
         Object {
           "clone_url": "url",

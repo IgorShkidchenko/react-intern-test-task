@@ -4,7 +4,7 @@ exports[`<RepositoryTableContainer /> renders correctly 1`] = `
 <RepositoryTableComponent
   rows={
     Array [
-      <UNDEFINED
+      <Memo(Connect(RepotisoryRowContainer))
         repository={
           Object {
             "id": 2,
@@ -12,7 +12,7 @@ exports[`<RepositoryTableContainer /> renders correctly 1`] = `
           }
         }
       />,
-      <UNDEFINED
+      <Memo(Connect(RepotisoryRowContainer))
         repository={
           Object {
             "id": 1,

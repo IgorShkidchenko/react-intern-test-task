@@ -11,19 +11,33 @@ export class LanguageTableContainer extends React.Component {
     this.props.loadRepositoryLanguages(this.props.repository.languages_url);
   }
 
+  sumOfObjectValues(hash) {
+    let sum = 0;
+
+    Object.values(hash).forEach((languageBytes) => {
+      sum += languageBytes;
+    });
+
+    return sum;
+  };
+
+  calculatePercentage(num, total) {
+    return ((num * 100) / total).toFixed(2);
+  }
+
   render() {
     const rows = [];
     const { repositoryLanguages } = this.props;
 
     if (repositoryLanguages !== null) {
-      const totalRepositoryLanguagesBytes = sumOfObjectValues(repositoryLanguages);
+      const totalRepositoryLanguagesBytes = this.sumOfObjectValues(repositoryLanguages);
 
       Object.entries(repositoryLanguages).forEach((language) => {
         const languageName = language[0];
         const languageBytes = language[1];
 
         rows.push(<LanguageRow
-          percentage={calculatePercentage(languageBytes, totalRepositoryLanguagesBytes)}
+          percentage={this.calculatePercentage(languageBytes, totalRepositoryLanguagesBytes)}
           languageName={languageName}
           key={languageName}
         />);
@@ -33,18 +47,6 @@ export class LanguageTableContainer extends React.Component {
     return <LanguageTableComponent rows={rows} />;
   }
 }
-
-export const sumOfObjectValues = (hash) => {
-  let sum = 0;
-
-  Object.values(hash).forEach((languageBytes) => {
-    sum += languageBytes;
-  });
-
-  return sum;
-};
-
-export const calculatePercentage = (num, total) => ((num * 100) / total).toFixed(2);
 
 LanguageTableContainer.propTypes = {
   repository: PropTypes.object.isRequired,
