@@ -2,19 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as yup from 'yup'
+import * as yup from "yup";
 
 import { repositoryActions } from "../../../store/repositories";
-
 
 const validationSchema = yup.object({
   repositoryUrl: yup
     .string()
     .required("Required.")
-    .matches(/^.+\/{1}.+$/, "Invalid repository address")
-})
+    .matches(/^.+\/{1}.+$/, "Invalid repository address"),
+});
 
-export class RepositoryForm extends React.Component {
+class RepositoryForm extends React.Component {
   render() {
     return (
       <Formik

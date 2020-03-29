@@ -6,7 +6,7 @@ import { repositoryActions } from "../../../store/repositories";
 import LanguageTableComponent from "./component";
 import LanguageRow from ".././LanguageRow";
 
-export class LanguageTableContainer extends React.Component {
+class LanguageTableContainer extends React.Component {
   componentDidMount() {
     this.props.loadRepositoryLanguages(this.props.repository.languages_url);
   }
@@ -19,7 +19,7 @@ export class LanguageTableContainer extends React.Component {
     });
 
     return sum;
-  };
+  }
 
   calculatePercentage(num, total) {
     return ((num * 100) / total).toFixed(2);

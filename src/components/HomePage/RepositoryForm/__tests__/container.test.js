@@ -1,28 +1,32 @@
 import React from "react";
-import { mount } from "enzyme";
+import { shallow } from "enzyme";
 import { waitFor } from "@testing-library/dom";
-import { RepositoryForm } from "../container";
+import configureStore from "redux-mock-store";
+
+import RepositoryForm from "../container";
 
 describe("<RepotisoryRow />", () => {
   const clickFn = jest.fn();
-  let wrapper;
+  const mockStore = configureStore([]);
+  const initialState = { onAddRepository: clickFn };
+  const store = mockStore(initialState);
 
+  let container;
   beforeEach(() => {
-    wrapper = mount(<RepositoryForm
-      onAddRepository={clickFn}
-    />);
+    const wrapper = shallow(<RepositoryForm store={store} />);
+    container = wrapper.dive().dive().dive();
   });
 
   it("renders correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it("should call onAddRepository on submit", async () => {
     const value = { target: { name: "repositoryUrl", value: "facebook/react" } };
-    wrapper.find("input").simulate("change", value);
+    container.find("input").simulate("change", value);
 
     await waitFor(() => {
-      wrapper.find("form").simulate("submit");
+      container.find("form").simulate("submit");
       expect(clickFn).toHaveBeenCalledTimes(1);
     });
   });

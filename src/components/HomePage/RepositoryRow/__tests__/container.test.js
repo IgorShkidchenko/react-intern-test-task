@@ -1,15 +1,21 @@
 import React from "react";
 import { shallow } from "enzyme";
+import configureStore from "redux-mock-store";
 
-import { RepotisoryRowContainer } from "../container";
+import RepotisoryRowContainer from "../container";
 
 describe("<RepotisoryRowContainer />", () => {
+  const mockStore = configureStore([]);
+  const initialState = { onRemoveRepository: () => {} };
+  const store = mockStore(initialState);
+
   it("renders correctly", () => {
     const wrapper = shallow(<RepotisoryRowContainer
       repository={{}}
-      onRemoveRepository={() => {}}
+      store={store}
     />);
+    const container = wrapper.dive();
 
-    expect(wrapper).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

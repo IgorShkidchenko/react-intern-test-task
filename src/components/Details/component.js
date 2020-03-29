@@ -7,10 +7,10 @@ import Stats from "./Stats";
 import LanguageTable from "./LanguageTable";
 
 const DetailsComponent = ({ location }) => {
-  const repository = location.state.repository;
+  const { repository } = location.state;
 
-    return (
-      <div>
+  return (
+    <div>
       <p>
         {repository.full_name}
         <a href={repository.clone_url}> Clone</a>
@@ -21,8 +21,8 @@ const DetailsComponent = ({ location }) => {
       </div>
       <Link to={path.ROOT}>Back</Link>
     </div>
-    )
-}
+  );
+};
 
 DetailsComponent.propTypes = {
   location: PropTypes.object.isRequired,

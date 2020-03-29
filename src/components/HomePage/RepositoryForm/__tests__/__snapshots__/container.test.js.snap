@@ -1,163 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<RepotisoryRow /> renders correctly 1`] = `
-<RepositoryForm
-  onAddRepository={[MockFunction]}
->
-  <Formik
-    initialValues={
-      Object {
-        "repositoryUrl": "",
-      }
-    }
-    onSubmit={[Function]}
-    validationSchema={
-      ObjectSchema {
-        "_blacklist": RefSet {
-          "list": Set {},
-          "refs": Map {},
-        },
-        "_conditions": Array [],
-        "_defaultDefault": [Function],
-        "_deps": Array [],
-        "_excludedEdges": Array [],
-        "_exclusive": Object {},
-        "_mutate": undefined,
-        "_nodes": Array [
-          "repositoryUrl",
-        ],
-        "_options": Object {
-          "abortEarly": true,
-          "recursive": true,
-        },
-        "_type": "object",
-        "_typeError": [Function],
-        "_whitelist": RefSet {
-          "list": Set {},
-          "refs": Map {},
-        },
-        "fields": Object {
-          "repositoryUrl": StringSchema {
-            "_blacklist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "_conditions": Array [],
-            "_deps": Array [],
-            "_exclusive": Object {
-              "matches": false,
-              "required": true,
-            },
-            "_mutate": undefined,
-            "_options": Object {
-              "abortEarly": true,
-              "recursive": true,
-            },
-            "_type": "string",
-            "_typeError": [Function],
-            "_whitelist": RefSet {
-              "list": Set {},
-              "refs": Map {},
-            },
-            "tests": Array [
-              [Function],
-              [Function],
-            ],
-            "transforms": Array [
-              [Function],
-            ],
-          },
-        },
-        "tests": Array [],
-        "transforms": Array [
-          [Function],
-        ],
-      }
-    }
+<Form>
+  <Field
+    name="repositoryUrl"
+    placeholder="Enter repository name e.g. facebook/react"
+    type="repositoryUrl"
+  />
+  <FormikConnect(ErrorMessageImpl)
+    component="p"
+    name="repositoryUrl"
+  />
+  <button
+    disabled={false}
+    type="submit"
   >
-    <Form>
-      <form
-        action="#"
-        onReset={[Function]}
-        onSubmit={[Function]}
-      >
-        <Field
-          name="repositoryUrl"
-          placeholder="Enter repository name e.g. facebook/react"
-          type="repositoryUrl"
-        >
-          <input
-            name="repositoryUrl"
-            onBlur={[Function]}
-            onChange={[Function]}
-            placeholder="Enter repository name e.g. facebook/react"
-            type="repositoryUrl"
-            value=""
-          />
-        </Field>
-        <FormikConnect(ErrorMessageImpl)
-          component="p"
-          name="repositoryUrl"
-        >
-          <ErrorMessageImpl
-            component="p"
-            formik={
-              Object {
-                "dirty": false,
-                "errors": Object {},
-                "getFieldHelpers": [Function],
-                "getFieldMeta": [Function],
-                "getFieldProps": [Function],
-                "handleBlur": [Function],
-                "handleChange": [Function],
-                "handleReset": [Function],
-                "handleSubmit": [Function],
-                "initialErrors": Object {},
-                "initialStatus": undefined,
-                "initialTouched": Object {},
-                "initialValues": Object {
-                  "repositoryUrl": "",
-                },
-                "isSubmitting": false,
-                "isValid": true,
-                "isValidating": false,
-                "registerField": [Function],
-                "resetForm": [Function],
-                "setErrors": [Function],
-                "setFieldError": [Function],
-                "setFieldTouched": [Function],
-                "setFieldValue": [Function],
-                "setFormikState": [Function],
-                "setStatus": [Function],
-                "setSubmitting": [Function],
-                "setTouched": [Function],
-                "setValues": [Function],
-                "status": undefined,
-                "submitCount": 0,
-                "submitForm": [Function],
-                "touched": Object {},
-                "unregisterField": [Function],
-                "validateField": [Function],
-                "validateForm": [Function],
-                "validateOnBlur": true,
-                "validateOnChange": true,
-                "validateOnMount": false,
-                "values": Object {
-                  "repositoryUrl": "",
-                },
-              }
-            }
-            name="repositoryUrl"
-          />
-        </FormikConnect(ErrorMessageImpl)>
-        <button
-          disabled={false}
-          type="submit"
-        >
-          Submit
-        </button>
-      </form>
-    </Form>
-  </Formik>
-</RepositoryForm>
+    Submit
+  </button>
+</Form>
 `;
