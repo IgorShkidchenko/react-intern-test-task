@@ -1,21 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<RepotisoryRow /> renders correctly 1`] = `
-<Form>
-  <Field
-    name="repositoryUrl"
-    placeholder="Enter repository name e.g. facebook/react"
-    type="repositoryUrl"
-  />
-  <FormikConnect(ErrorMessageImpl)
-    component="p"
-    name="repositoryUrl"
-  />
-  <button
-    disabled={false}
-    type="submit"
-  >
-    Submit
-  </button>
-</Form>
+<RepositoryFormComponent
+  dirty={false}
+  errors={Object {}}
+  getFieldHelpers={[Function]}
+  getFieldMeta={[Function]}
+  getFieldProps={[Function]}
+  handleBlur={[Function]}
+  handleChange={[Function]}
+  handleReset={[Function]}
+  handleSubmit={[Function]}
+  initialErrors={Object {}}
+  initialTouched={Object {}}
+  initialValues={
+    Object {
+      "repositoryUrl": "",
+    }
+  }
+  isSubmitting={false}
+  isValid={true}
+  isValidating={false}
+  onAddRepository={[Function]}
+  registerField={[Function]}
+  resetForm={[Function]}
+  setErrors={[Function]}
+  setFieldError={[Function]}
+  setFieldTouched={[Function]}
+  setFieldValue={[Function]}
+  setFormikState={[Function]}
+  setStatus={[Function]}
+  setSubmitting={[Function]}
+  setTouched={[Function]}
+  setValues={[Function]}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  submitCount={0}
+  submitForm={[Function]}
+  touched={Object {}}
+  unregisterField={[Function]}
+  validateField={[Function]}
+  validateForm={[Function]}
+  validateOnBlur={true}
+  validateOnChange={true}
+  validateOnMount={false}
+  values={
+    Object {
+      "repositoryUrl": "",
+    }
+  }
+/>
 `;

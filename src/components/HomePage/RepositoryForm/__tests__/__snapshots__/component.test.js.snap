@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RepositoryFormComponent /> renders correctly 1`] = `
+<Form>
+  <Field
+    name="repositoryUrl"
+    placeholder="Enter repository name e.g. facebook/react"
+    type="repositoryUrl"
+  />
+  <FormikConnect(ErrorMessageImpl)
+    component="p"
+    name="repositoryUrl"
+  />
+  <button
+    disabled={false}
+    type="submit"
+  >
+    Submit
+  </button>
+</Form>
+`;

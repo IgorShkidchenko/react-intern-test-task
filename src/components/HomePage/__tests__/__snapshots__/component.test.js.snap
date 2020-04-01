@@ -2,7 +2,7 @@
 
 exports[`<HomePageComponent /> renders correctly 1`] = `
 <div>
-  <Connect(RepositoryForm) />
+  <Connect(WithFormik(RepositoryFormComponent)) />
   <Connect(RepositoryTableContainer) />
 </div>
 `;
